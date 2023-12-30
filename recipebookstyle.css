@@ -1,0 +1,93 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to left, #eac58f, #d25064); /* Gradient from pink to light pink */
+  padding-bottom: 1000px;
+  padding-left: 20px;
+  padding-top: 100px;
+}
+
+.topic-main{
+  font-family: Rubik Doodle Shadow;
+  font-size: 30px;
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  left: 100px;
+  display: flex;
+  align-items: center;
+  color: rgb(200, 184, 214);
+  justify-content: center;
+  outline: 4px solid #e1b86b;
+  background-color: rgb(5, 4, 4);
+  opacity: 0.8;
+  border-radius: 5px;
+  padding: 5px;
+  letter-spacing: 10px;
+}
+.h-4{
+  color: wheat;
+}
+.r-b{
+  color: wheat;
+}
+.recipes{
+  margin-left: 100px;
+  background-color: rgb(238, 124, 98);
+  width: 230px;
+  padding: 12px;
+  padding-top: 5px;
+  margin-top: 20px;
+  color: rgb(2, 18, 2);
+  border-radius: 5px;
+  font-weight: bold;
+  font-style: italic;
+  transition: background-color 0.15s;
+  box-shadow: -3px -3px 10px rgba(0,0,0,0.5);
+}
+.recipes ul li{
+  font-size: 15px;
+  cursor: pointer;
+}
+.recipes ul li:hover{
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  color: rgb(218, 226, 226);
+  background-color: #1b60c2;
+  border-radius: 5px;
+  width: 140px;
+  padding: 1px 5px;
+}
+
+.recipes ul li:active{
+  opacity: 0.6;
+}
+
+
+.recipes h4{
+  color: rgb(194, 207, 205);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+  width: 120px;
+  padding: 3px 4px;
+  background-color: rgb(10, 1, 108);
+  border-radius: 3px;
+}
+.recipes:hover{
+  background-color: rgb(139, 131, 138);
+}
+.recipes ul :first-child:hover{
+  font-size: 18px;
+}
+.recipes ul :nth-child(2):hover{
+  font-size: 18px;
+}
+.recipes ul :nth-child(3):hover{
+  font-size: 18px;
+}
+
+.recipes ul :last-child:hover{
+  font-size: 18px;
+}
