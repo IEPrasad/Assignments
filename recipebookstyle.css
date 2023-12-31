@@ -7,10 +7,10 @@ body {
   padding-bottom: 60px;
   padding-left: 20px;
   padding-top: 60px;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
-.topic-main{
+#topic-main{
   font-family: Rubik Doodle Shadow;
   font-size: 30px;
   font-weight: bold;
@@ -38,7 +38,7 @@ body {
 .r-b{
   color: wheat;
 }
-.recipes{
+#recipes{
   display: block;
   margin-left: 100px;
   background-color: rgb(6, 149, 125);
@@ -53,11 +53,11 @@ body {
   transition: background-color 0.15s;
   box-shadow: 0px 0px 10px rgba(214, 203, 203, 0.5);
 }
-.recipes ul li{
+#recipes ul li{
   font-size: 15px;
   cursor: pointer;
 }
-.recipes ul li:hover{
+#recipes ul li:hover{
   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
   color: rgb(218, 226, 226);
   background-color: #1b60c2;
@@ -66,12 +66,12 @@ body {
   padding: 1px 5px;
 }
 
-.recipes ul li:active{
+#recipes ul li:active{
   opacity: 0.6;
 }
 
 
-.recipes h4{
+#recipes h4{
   color: rgb(194, 207, 205);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -82,32 +82,32 @@ body {
   border-radius: 3px;
   margin-left: 20px;
 }
-.recipes:hover{
+#recipes:hover{
   background-color: rgb(139, 131, 138);
 }
-.recipes ul :first-child:hover{
+#recipes ul :first-child:hover{
   font-size: 18px;
 }
-.recipes ul :nth-child(2):hover{
+#recipes ul :nth-child(2):hover{
   font-size: 18px;
 }
-.recipes ul :nth-child(3):hover{
-  font-size: 18px;
-}
-
-.recipes ul :last-child:hover{
+#recipes ul :nth-child(3):hover{
   font-size: 18px;
 }
 
-.main{
+#recipes ul :last-child:hover{
+  font-size: 18px;
+}
+
+#main{
   position: relative;
   display: flex;
   flex-direction: column;
   /* background-color: rgb(118, 64, 7); */
   background: linear-gradient(to left, #435190, #16b77f); /* Gradient from pink to light pink */
   left: 20px;
-  right: 20px;
-  height: 3000px;
+  right: 40px;
+  /* height: 3000px; */
   margin-top: 20px;
   border-top-left-radius: 50px;
   border-top-right-radius: 5px;
@@ -125,7 +125,7 @@ body {
 .images{
   display: flex;
   height: 150px;
-  border: 2px solid white;
+  border: 2px solid rgb(173, 159, 159);
   margin-top: 20px;
   margin-left: 20px;
   align-items: center;
@@ -137,12 +137,60 @@ body {
   margin-right: 0;
 }
 
-.imgx{
+img{
+  border-radius: 50%;
+  
+}
+.imgx1,.imgx2,.imgx3,.imgx4{
   display: flex;
   height: 130px;
   width: 130px;
   margin-right: 12px;
   border: 2px solid white;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.imgx1:hover img{
+  border: 5px solid black;
+  border-radius: none;
+}
+.imgx2:hover img{ 
+  border: 5px solid black;
+  border-radius: none;
+}.imgx3:hover img{
+  border: 5px solid black;
+  border-radius: none;
+}.imgx4:hover img{
+  border: 5px solid black;
+  border-radius: none;
+}
+
+
+.tooltip{
+  display: block;
+  background-color: black;
+  color: white;
+  z-index: 0;
+  padding: 5px 8px;
+  position: absolute;
+  bottom: -30px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+}
+.imgx1:hover .tooltip{
+  opacity: 1;
+}
+.imgx2:hover .tooltip{
+  opacity: 1;
+}
+.imgx3:hover .tooltip{
+  opacity: 1;
+}
+.imgx4:hover .tooltip{
+  opacity: 1;
 }
 
 
@@ -151,7 +199,7 @@ body {
   flex-direction: column;
 }
 
-.page{
+.page,.page4{
   position: relative;
   background-color: white;
   color: black;
@@ -167,12 +215,12 @@ body {
   box-shadow: 0px 0px 30px rgba(13, 5, 5, 0.7);
 }
 
-.page-border{
+.page-border1,.page-border2,.page-border3,.page-border4{
   display: flex;
   position: relative;
   flex-direction: column;
   /* width: 770px; */
-  height: 800px;
+  height: 1000px;
   border: 2px solid rgb(123, 117, 117);
   border-radius: 5px;
   position: relative;
@@ -181,13 +229,55 @@ body {
   background: linear-gradient(to left, #9db4bf, #e94f4f);
 }
 
+.page-border2{
+  height: 1200px;
+  background: linear-gradient(to left, #3dace0, #055a4d);
+}
+
+.page-border3{
+  background: linear-gradient(to left, #95e389, #257907);
+}
+
+.page-border4{
+  background: linear-gradient(to left, #e0e46b, #4e5a03);
+  
+}
+
+.page-border2 .ins{
+  top: 590px;
+}
+.page-border2 .instructions{
+  top: 660px;
+}
+
+.page-border3 .ins{
+  top: 600px;
+}
+
+.page-border3 .instructions{
+  top: 670px;
+}
+.page-border4 .ins{
+  top: 620px;
+}
+.page-border4 .instructions{
+  top: 700px;
+  line-height: auto;
+}
+.page-border4{
+  height: 1250px;
+}
+.page4{
+  height: 1200px;
+}
+
 .topic1{
   /* margin-top: 12px; */
   margin-left: 180px;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 10px;
   text-wrap: nowrap;
-  font-family: Caveat;
+  font-family: Rubik Doodle Shadow;
   font-weight: bold;
   text-decoration: underline;
   /* background-color: aqua; */
@@ -195,8 +285,12 @@ body {
   width: 300px;
   padding-left: 20px;
   padding-right: 20px;
-}
+  text-wrap: nowrap;
 
+}
+.f1 .topic1{
+  /* font-size: 27px; */
+}
 .f1{
   position: absolute;
   right: 0px;
@@ -204,24 +298,23 @@ body {
   top: 22px;
   display: flex;
   flex-direction: row;
-  height: 70px;
+  height: 80px;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid black; */
-  /* background-color: rgb(255, 249, 196); */
   background-color: rgb(5, 19, 74);
   transition: background-color 0.15s;
-  /* border-radius: 5px; */
   color: white;
+  text-wrap: nowrap;
 }
 .f1:hover{
   background-color: rgb(45, 67, 155);
+  color: black;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-
+  text-shadow: 2px 2px 4px rgba(255, 251, 251, 0.9);
 }
 .rp1{
   margin-left: 200px;
-  font-family: Rubik Doodle Shadow;
+  font-family: Caveat;
   font-weight: bold;
   font-size: 28px;
 }
@@ -291,7 +384,7 @@ td{
 .instructions{
   position: absolute;
   top: 500px;
-  right: 15%;
+  right: 10%;
   left: 10%;
   background-color: rgb(249, 212, 28);
   border-radius: 8px;
@@ -345,8 +438,15 @@ input[type="checkbox"]:checked + label:before {
   line-height: 18px;
 }
 
+li:hover label{
+  font-size: 20px;
+  background-color: #16b77f;
+}
 
-
-
-
-
+.back{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+}
