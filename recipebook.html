@@ -14,13 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:ital,wght@0,500;1,500&family=Roboto:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h2 class="topic-main"><div class="r-b">Recipe</div>Book<div class="h-4"><i>4</i></div>u</h2>
+  <h2 id="topic-main"><div class="r-b">Recipe</div>Book<div class="h-4"><i>4</i></div>u</h2>
 
 
-  <div class="main">
+  <div class="#main">
 <!-- divide page into flex -->
     <div class="page-top">
-      <div class="recipes">
+      <div id="recipes">
         <h4>Recipes....</h4>
         <ul>
           <li>Coconut Rotti</li>
@@ -30,16 +30,28 @@
         </ul>
       </div>
       <div class="images">
-        <div class="imgx"><img src="rotti.jpeg" alt="rotti image" width="130px"></div>
-        <div class="imgx"><img src="chickenrice.jpeg" alt="chicken rice image" width="130px"></div>
-        <div class="imgx"><img src="kottu.jpeg" alt="kottu image" width="130px"></div>
-        <div class="imgx"><img src="meatloaf.jpeg" alt="meatloaf image" width="130px"></div>
+        <div class="imgx1">
+          <img src="rotti.jpeg" alt="rotti image" width="130px" height="130px">
+          <div class="tooltip">Coconut Rotti</div>
+        </div>
+        <div class="imgx2">
+          <img src="chickenrice.jpeg" alt="chicken rice image" width="130px" height="130px">
+          <div class="tooltip">Chicken Rice</div>
+        </div>
+        <div class="imgx3">
+          <img src="kottu.jpeg" alt="kottu image" width="130px" height="130px">
+          <div class="tooltip">Chicken Kottu</div>
+        </div>
+        <div class="imgx4">
+          <img src="meatloaf.jpeg" alt="meatloaf image" width="130px" height="130px">
+          <div class="tooltip">Meat Loaf</div>
+        </div>
       </div>
     </div>
 
     <div class="page-content">
       <div class="page">
-        <div class="page-border">
+        <div class="page-border1">
           <div class="f1">
             <div class="topic1">COCONUT ROTTI</div>  
             <div class="rp1">Recipe 1</div>
@@ -94,6 +106,239 @@
               </ol>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-border2">
+          <div class="f1">
+            <div class="topic1">CHICKEN RICE</div>  
+            <div class="rp1">Recipe 2</div>
+          </div>
+          <div class="f2">
+            <div class="ing">Ingredients</div>
+            <table>
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td>Basmati Rice</td>
+                <td>1 cup</td>
+              </tr>
+              <tr>
+                <td>Chicken</td>
+                <td>1 lb</td>
+              </tr>
+              <tr>
+                <td>Onion</td>
+                <td>1, chopped</td>
+              </tr>
+              <tr>
+                <td>Cloves,   Garlic</td>
+                <td>2, minced</td>
+              </tr>
+              <tr>
+                <td>Ginger</td>
+                <td>1 teaspoon, grated</td>
+              </tr>
+              <tr>
+                <td>Tumeric powder</td>
+                <td>1 teaspoon</td>
+              </tr>
+              <tr>
+                <td>Salt and Pepper</td>
+                <td>to taste</td>
+              </tr>
+              <tr>
+                <td>Fresh cialantro</td>
+                <td>(for ganish)</td>
+              </tr>
+            </table>
+            <div class="ins">Instructions</div>
+            <div class="instructions">
+              <ol>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Cook basmati rice according to package instructions.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>In a pan, sauté onions, garlic, and ginger until fragrant..</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Add diced chicken, turmeric powder, salt, and pepper. Cook until chicken is browned. </label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                 <label>Mix the cooked chicken with the cooked rice.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Garnish with fresh cilantro and serve hot.</label>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <div class="page-border3">
+          <div class="f1">
+            <div class="topic1">CHICKEN KOTTU</div>  
+            <div class="rp1">Recipe 3</div>
+          </div>
+          <div class="f2">
+            <div class="ing">Ingredients</div>
+            <table>
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td> Shredded roti (flatbread)</td>
+                <td>2 cups</td>
+              </tr>
+              <tr>
+                <td>cooked chicken, shredded</td>
+                <td>1 cups</td>
+              </tr>
+              <tr>
+                <td>Watervegetables (carrots, cabbage, leeks), finely chopped</td>
+                <td>1 cup</td>
+              </tr>
+              <tr>
+                <td>Eggs</td>
+                <td>2 (beaten)</td>
+              </tr>
+              <tr>
+                <td>Onion</td>
+                <td>1, (sliced)</td>
+              </tr>
+              <tr>
+                <td>Cloves, Garlic</td>
+                <td>2 (minced)</td>
+              </tr>
+              <tr>
+                <td>Curry powder</td>
+                <td>1 teaspoon</td>
+              </tr>
+              <tr>
+                <td>Salt and Pepper</td>
+                <td>to taste</td>
+              </tr>
+            </table>
+            <div class="ins">Instructions</div>
+            <div class="instructions">
+              <ol>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>In a pan, sauté onions and garlic until softened.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Add chopped vegetables and cook until tender.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Stir in shredded roti, cooked chicken, and curry powder.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                 <label>Make a well in the center and pour beaten eggs. Scramble the eggs until cooked.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Mix everything together and season with salt and pepper..</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Serve hot with a squeeze of lime.</label>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page4">
+        <div class="page-border4">
+          <div class="f1">
+            <div class="topic1">MEAT LOAF</div>  
+            <div class="rp1">Recipe 4</div>
+          </div>
+          <div class="f2">
+            <div class="ing">Ingredients</div>
+            <table>
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td>Ground beef</td>
+                <td>1 lb</td>
+              </tr>
+              <tr>
+                <td> Breadcrumbs</td>
+                <td>1 cup</td>
+              </tr>
+              <tr>
+                <td>Milk</td>
+                <td>1/2 cup</td>
+              </tr>
+              <tr>
+                <td>Onion</td>
+                <td>1,finely chopped</td>
+              </tr>
+              <tr>
+                <td>Cloves and Garlic</td>
+                <td>2, minced</td>
+              </tr>
+              <tr>
+                <td>Ketchup</td>
+                <td>1/4 cup</td>
+              </tr>
+              <tr>
+                <td> Worcestershire sauce</td>
+                <td> 2 tablespoons</td>
+              </tr>
+              <tr>
+                <td>Dried thyme</td>
+                <td>1 teaspoon</td>
+              </tr>
+              <tr>
+                <td> Salt and peppe</td>
+                <td> to taste</td>
+              </tr>
+            </table>
+            <div class="ins">Instructions</div>
+            <div class="instructions">
+              <ol>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Preheat the oven to 350°F (175°C).</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>In a bowl, combine ground beef, breadcrumbs, milk, chopped onion,<br> minced garlic, ketchup, Worcestershire sauce, dried thyme, salt, and pepper..</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Mix until well combined and shape into a loaf.</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Place the meat loaf in a baking dish and bake for 1 hour or until the<br> internal temperature reaches 160°F (70°C).</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Let it rest for a few minutes before slicing. Serve with your favorite sides.</label>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="back"><a href="#recipes">Back to top</a></aBack></div>
+          
         </div>
       </div>
     </div>
