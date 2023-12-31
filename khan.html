@@ -1,56 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Delicious Recipes</title>
+  <title>Recipe Book4U</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Roboto:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Roboto:wght@400;500;700&family=Rubik+Broken+Fax&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:ital,wght@0,500;1,500&family=Roboto:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+
+<style>
+  body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to left, #a72ac6, #ec8191); /* Gradient from pink to light pink */
+  padding-bottom: 90px;
+  padding-left: 20px;
+  padding-top: 60px;
+  padding-right: 30px;
+  position: relative;
+}
+
+#topic-main{
+  /* font-family: Caveat; */
+  font-family: impact;
+  font-size: 40px;
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  color: rgb(210, 196, 222);
+  justify-content: center;
+  /* outline: 4px solid #e1b86b; */
+  background-color: rgb(8, 10, 32);
+  opacity: 0.9;
+  border-radius: 5px;
+  padding: 20px;
+  letter-spacing: 30px;
+  text-decoration: underline;
+  z-index: 100;
+  border-bottom: 10px solid white;
+  border-top: 10px solid white;
+}
+#topic-main:hover{
+  background-color: rgb(28, 168, 105);
+  color: black;
+}
+.h-4{
+  color: wheat;
+}
+.r-b{
+  color: wheat;
+}
+#recipes{
+  display: block;
+  margin-left: 100px;
+  background-color: rgb(6, 149, 125);
+  width: 230px;
+  padding: 12px;
+  padding-top: 5px;
+  margin-top: 100px;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  font-weight: bold;
+  font-style: italic;
+  transition: background-color 0.15s;
+  box-shadow: 0px 0px 10px rgba(214, 203, 203, 0.5);
+}
+#recipes ul li{
+  font-size: 15px;
+  cursor: pointer;
+}
+#recipes ul li:hover{
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  color: rgb(218, 226, 226);
+  background-color: #1b60c2;
+  border-radius: 5px;
+  width: 140px;
+  padding: 1px 5px;
+}
+
+#recipes ul li:active{
+  opacity: 0.6;
+}
+
+
+#recipes h4{
+  color: rgb(194, 207, 205);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+  width: 120px;
+  padding: 3px 4px;
+  background-color: rgb(10, 1, 108);
+  border-radius: 3px;
+  margin-left: 20px;
+}
+#recipes:hover{
+  background-color: rgb(139, 131, 138);
+}
+#recipes ul :first-child:hover{
+  font-size: 18px;
+}
+#recipes ul :nth-child(2):hover{
+  font-size: 18px;
+}
+#recipes ul :nth-child(3):hover{
+  font-size: 18px;
+}
+
+#recipes ul :last-child:hover{
+  font-size: 18px;
+}
+
+#main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgb(118, 64, 7); */
+  background: linear-gradient(to left, #435190, #16b77f); /* Gradient from pink to light pink */
+  left: 20px;
+  right: 40px;
+  /* height: 3000px; */
+  margin-top: 20px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 5px;
+  box-shadow: 0px 0px 6px rgba(251, 250, 250, 0.9);
+  padding-top: 12px;
+  border-left: 10px solid rgb(13, 4, 4);
+  border-top: 4px solid rgb(13, 4, 4);
+  padding: 20px;
+}
+
+.page-top{
+  display: flex;
+  flex-direction: row;
+}
+.images{
+  display: flex;
+  height: 150px;
+  border: 2px solid rgb(173, 159, 159);
+  margin-top: 100px;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  background-color: rgb(226, 57, 57);
+}
+.images :last-child{
+  margin-right: 0;
+}
+
+img{
+  border-radius: 50%;
+  
+}
+.imgx1,.imgx2,.imgx3,.imgx4{
+  display: flex;
+  height: 130px;
+  width: 130px;
+  margin-right: 12px;
+  border: 2px solid white;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.imgx1:hover img{
+  border: 5px solid black;
+  border-radius: none;
+}
+.imgx2:hover img{ 
+  border: 5px solid black;
+  border-radius: none;
+}.imgx3:hover img{
+  border: 5px solid black;
+  border-radius: none;
+}.imgx4:hover img{
+  border: 5px solid black;
+  border-radius: none;
+}
+
+
+.tooltip{
+  display: block;
+  background-color: black;
+  color: white;
+  z-index: 0;
+  padding: 5px 8px;
+  position: absolute;
+  bottom: -30px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+}
+.imgx1:hover .tooltip{
+  opacity: 1;
+}
+.imgx2:hover .tooltip{
+  opacity: 1;
+}
+.imgx3:hover .tooltip{
+  opacity: 1;
+}
+.imgx4:hover .tooltip{
+  opacity: 1;
+}
+
+
+.page-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.page,.page4{
+  position: relative;
+  background-color: white;
+  color: black;
+  height: 1100px;
+  /* width: 770px; */
+  margin-left: 30px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  /* background-color: rgb(230, 196, 150); */
+  background: linear-gradient(to left, #438890, #93b3a7);
+  box-shadow: 0px 0px 30px rgba(13, 5, 5, 0.7);
+}
+
+#page-border1,#page-border2,#page-border3,#page-border4{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  /* width: 770px; */
+  height: 1200px;
+  border: 2px solid rgb(123, 117, 117);
+  border-radius: 5px;
+  position: relative;
+  padding-top: 130px;
+  /* background-color: rgb(234, 224, 205); */
+  background: linear-gradient(to left, #9db4bf, #e94f4f);
+}
+
+#page-border2{
+  height: 1200px;
+  background: linear-gradient(to left, #3dace0, #055a4d);
+}
+
+#page-border3{
+  background: linear-gradient(to left, #95e389, #257907);
+}
+
+#page-border4{
+  background: linear-gradient(to left, #e0e46b, #4e5a03);
+  
+}
+
+#page-border2 .ins{
+  top: 590px;
+}
+#page-border2 .instructions{
+  top: 660px;
+}
+#page-border3{
+  height: 1400px;
+}
+
+#page-border3 .ins{
+  top: 600px;
+}
+
+#page-border3 .instructions{
+  top: 670px;
+}
+#page-border4 .ins{
+  top: 620px;
+}
+#page-border4 .instructions{
+  top: 700px;
+  line-height: auto;
+}
+#page-border4{
+  height: 1250px;
+}
+.page4{
+  height: 1200px;
+}
+
+.topic1{
+  /* margin-top: 12px; */
+  margin-left: 180px;
+  font-size: 26px;
+  letter-spacing: 10px;
+  text-wrap: nowrap;
+  font-family: Rubik Doodle Shadow;
+  font-weight: bold;
+  text-decoration: underline;
+  /* background-color: aqua; */
+  font-weight: bold;
+  width: 300px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-wrap: nowrap;
+
+}
+.f1 .topic1{
+  /* font-size: 27px; */
+}
+.f1{
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 22px;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(5, 19, 74);
+  transition: background-color 0.15s;
+  color: white;
+  text-wrap: nowrap;
+}
+.f1:hover{
+  background-color: rgb(45, 67, 155);
+  color: black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(255, 251, 251, 0.9);
+}
+.rp1{
+  margin-left: 200px;
+  font-family: Caveat;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.ing{
+  position: absolute;
+  left: 30px;
+  font-size: 24px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  padding: 3px 5px;
+  border-radius: 4px;
+  letter-spacing: 4px;
+  background-color: white;
+  text-decoration: underline;
+  border-top: 6px solid black;
+  border-bottom: 6px solid black
+}
+.ing:hover{
+  background-color: rgb(111, 245, 250);
+}
+::selection{
+  background-color: rgb(242, 232, 47);
+  color: black;
+}
+table{
+  position: absolute;
+  top: 200px;
+  left: 30px;
+  border: 3px solid white;
+  background-color: wheat;
+}
+
+th{
+  padding-right: 60px;
+  font-size: 22px;
+  background-color: lightyellow;
+  padding-left: 60px;
+  width: 140px;
+}
+td{
+  padding-left: 12px;
+  padding-top: 12px;
+  font-size: 18px;
+  background-color: rgb(187, 187, 218);
+  border: none;
+}
+
+.ins{
+  position: absolute;
+  top: 440px;
+  background-color: white;
+  left: 30px;
+  font-size: 24px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  padding: 3px 5px;
+  border-radius: 4px;
+  letter-spacing: 4px;
+  background-color: white;
+  text-decoration: underline;
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+}
+.ins:hover{
+  background-color: rgb(111, 245, 250);
+}
+
+.instructions{
+  position: absolute;
+  top: 500px;
+  right: 10%;
+  left: 10%;
+  background-color: rgb(249, 212, 28);
+  border-radius: 8px;
+  padding: 20px;
+  border-top: 10px solid black;
+  border-bottom: 10px solid black;
+}
+li{
+  list-style:decimal;
+  line-height: 36px;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+input[type="checkbox"] {
+  /* display: none; */
+}
+
+/* Style the custom checkbox container */
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px; /* Adjust the spacing between checkbox and label */
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  display: inline-block;
+}
+
+/* Style the checkmark */
+input[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px; /* Adjust the size of the checkbox */
+  height: 20px; /* Adjust the size of the checkbox */
+  border: 2px solid #4CAF50; /* Color of the checkbox border */
+  background-color: #fff; /* Background color of the checkbox */
+  border-radius: 4px; /* Round the corners of the checkbox */
+  box-sizing: border-box;
+}
+
+/* Style the checkmark when checked */
+input[type="checkbox"]:checked + label:before {
+  background-color: #4CAF50; /* Color when checkbox is checked */
+  border-color: #4CAF50; /* Color of the checkbox border when checked */
+  content: '\2713'; /* Checkmark character */
+  color: #fff; /* Color of the checkmark */
+  font-size: 14px; /* Adjust the size of the checkmark */
+  text-align: center;
+  line-height: 18px;
+}
+
+li:hover label{
+  font-size: 20px;
+  background-color: #16b77f;
+}
+
+.back{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  color: rgb(235, 239, 244);
+}
+</style>
+
 </head>
 <body>
+  <h2 id="topic-main"><div class="r-b">Recipe</div>Book<div class="h-4"><i>4</i></div>u.com</h2>
 
-    <header>
-        <h1>Delicious Recipes</h1>
-    </header>
 
-    <section class="recipe" id="coconutRoti">
-        <h2>Coconut Roti</h2>
-        <img src="coconut_roti.jpg" alt="Coconut Roti">
-        <div class="recipe-details">
-            <h3>Ingredients:</h3>
-            <table>
-                <tr>
-                    <td>Grated Coconut</td>
-                    <td>2 cups</td>
-                </tr>
-                <tr>
-                    <td>All-purpose flour</td>
-                    <td>2 cups</td>
-                </tr>
-                <tr>
-                    <td>Water</td>
-                    <td>As needed</td>
-                </tr>
-                <tr>
-                    <td>Salt</td>
-                    <td>To taste</td>
-                </tr>
-            </table>
-            <h3>Instructions:</h3>
-            <ol>
-                <li>Mix grated coconut, all-purpose flour, and salt in a bowl.</li>
-                <li>Add water gradually and knead the mixture into a soft dough.</li>
-                <li>Divide the dough into equal portions and shape them into flat rounds.</li>
-                <li>Cook on a hot griddle until both sides are golden brown.</li>
-                <li>Serve hot with your favorite curry or chutney.</li>
-            </ol>
+  <div class="#main">
+<!-- divide page into flex -->
+    <div class="page-top">
+      <div id="recipes">
+        <h4>Recipes....</h4>
+        <ul>
+          <li><a href="#page-border1">Coconut Rotti</a></li>
+          <li><a href="#page-border2">Chicken Rice</a></li>
+          <li><a href="#page-border3">Chicken Kottu</a></li>
+          <li><a href="#page-border4">Meat Loaf</a></li>
+        </ul>
+      </div>
+      <div class="images">
+        <div class="imgx1">
+          <img src="rotti.jpeg" alt="rotti image" width="130px" height="130px">
+          <div class="tooltip">Coconut Rotti</div>
         </div>
-    </section>
+        <div class="imgx2">
+          <img src="chickenrice.jpeg" alt="chicken rice image" width="130px" height="130px">
+          <div class="tooltip">Chicken Rice</div>
+        </div>
+        <div class="imgx3">
+          <img src="kottu.jpeg" alt="kottu image" width="130px" height="130px">
+          <div class="tooltip">Chicken Kottu</div>
+        </div>
+        <div class="imgx4">
+          <img src="meatloaf.jpeg" alt="meatloaf image" width="130px" height="130px">
+          <div class="tooltip">Meat Loaf</div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Add three more recipe sections with similar structure -->
+    <div class="page-content">
+      <div class="page">
+        <div id="page-border1">
+          <div class="f1">
+            <div class="topic1">COCONUT ROTTI</div>  
+            <div class="rp1">Recipe 1</div>
+          </div>
+          <div class="f2">
+            <div class="ing">Ingredients</div>
+            <table>
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td>Grated coconut</td>
+                <td>2 cups</td>
+              </tr>
+              <tr>
+                <td>Flour</td>
+                <td>2 cups</td>
+              </tr>
+              <tr>
+                <td>Water</td>
+                <td>as needed</td>
+              </tr>
+              <tr>
+                <td>Salt</td>
+                <td>to taste</td>
+              </tr>
+            </table>
+            <div class="ins">Instructions</div>
+            <div class="instructions">
+              <ol>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>In a bowl, mix grated coconut, all-purpose flour, and salt.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Gradually add water and knead the mixture into a soft dough.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Divide the dough into equal portions and shape them into flat rounds.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                 <label> Cook on a hot griddle until both sides are golden brown.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Serve hot with your favorite curry or chutney.</label>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="back"><a href="#recipes">Back to top</a></aBack></div>
 
-    <footer>
-        <p>Enjoy your Delicious Recipes!</p>
-    </footer>
+        </div>
+      </div>
+
+      <div class="page">
+        <div id="page-border2">
+          <div class="f1">
+            <div class="topic1">CHICKEN RICE</div>  
+            <div class="rp1">Recipe 2</div>
+          </div>
+          <div class="f2">
+            <div class="ing">Ingredients</div>
+            <table>
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td>Basmati Rice</td>
+                <td>1 cup</td>
+              </tr>
+              <tr>
+                <td>Chicken</td>
+                <td>1 lb</td>
+              </tr>
+              <tr>
+                <td>Onion</td>
+                <td>1, chopped</td>
+              </tr>
+              <tr>
+                <td>Cloves,   Garlic</td>
+                <td>2, minced</td>
+              </tr>
+              <tr>
+                <td>Ginger</td>
+                <td>1 teaspoon, grated</td>
+              </tr>
+              <tr>
+                <td>Tumeric powder</td>
+                <td>1 teaspoon</td>
+              </tr>
+              <tr>
+                <td>Salt and Pepper</td>
+                <td>to taste</td>
+              </tr>
+              <tr>
+                <td>Fresh cialantro</td>
+                <td>(for ganish)</td>
+              </tr>
+            </table>
+            <div class="ins">Instructions</div>
+            <div class="instructions">
+              <ol>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Cook basmati rice according to package instructions.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>In a pan, sauté onions, garlic, and ginger until fragrant..</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Add diced chicken, turmeric powder, salt, and pepper. Cook until chicken is browned. </label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                 <label>Mix the cooked chicken with the cooked rice.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Garnish with fresh cilantro and serve hot.</label>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="back"><a href="#recipes">Back to top</a></aBack></div>
+
+        </div>
+      </div>
+      <div class="page">
+        <div id="page-border3">
+          <div class="f1">
+            <div class="topic1">CHICKEN KOTTU</div>  
+            <div class="rp1">Recipe 3</div>
+          </div>
+          <div class="f2">
+            <div class="ing">Ingredients</div>
+            <table>
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td> Shredded roti (flatbread)</td>
+                <td>2 cups</td>
+              </tr>
+              <tr>
+                <td>cooked chicken, shredded</td>
+                <td>1 cups</td>
+              </tr>
+              <tr>
+                <td>Watervegetables (carrots, cabbage, leeks), finely chopped</td>
+                <td>1 cup</td>
+              </tr>
+              <tr>
+                <td>Eggs</td>
+                <td>2 (beaten)</td>
+              </tr>
+              <tr>
+                <td>Onion</td>
+                <td>1, (sliced)</td>
+              </tr>
+              <tr>
+                <td>Cloves, Garlic</td>
+                <td>2 (minced)</td>
+              </tr>
+              <tr>
+                <td>Curry powder</td>
+                <td>1 teaspoon</td>
+              </tr>
+              <tr>
+                <td>Salt and Pepper</td>
+                <td>to taste</td>
+              </tr>
+            </table>
+            <div class="ins">Instructions</div>
+            <div class="instructions">
+              <ol>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>In a pan, sauté onions and garlic until softened.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Add chopped vegetables and cook until tender.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Stir in shredded roti, cooked chicken, and curry powder.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                 <label>Make a well in the center and pour beaten eggs. Scramble the eggs until cooked.</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Mix everything together and season with salt and pepper..</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="" id="">
+                  <label>Serve hot with a squeeze of lime.</label>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="back"><a href="#recipes">Back to top</a></aBack></div>
+
+        </div>
+      </div>
+      <div class="page4">
+        <div id="page-border4">
+          <div class="f1">
+            <div class="topic1">MEAT LOAF</div>  
+            <div class="rp1">Recipe 4</div>
+          </div>
+          <div class="f2">
+            <div class="ing">Ingredients</div>
+            <table>
+              <tr>
+                <th>Ingredients</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td>Ground beef</td>
+                <td>1 lb</td>
+              </tr>
+              <tr>
+                <td> Breadcrumbs</td>
+                <td>1 cup</td>
+              </tr>
+              <tr>
+                <td>Milk</td>
+                <td>1/2 cup</td>
+              </tr>
+              <tr>
+                <td>Onion</td>
+                <td>1,finely chopped</td>
+              </tr>
+              <tr>
+                <td>Cloves and Garlic</td>
+                <td>2, minced</td>
+              </tr>
+              <tr>
+                <td>Ketchup</td>
+                <td>1/4 cup</td>
+              </tr>
+              <tr>
+                <td> Worcestershire sauce</td>
+                <td> 2 tablespoons</td>
+              </tr>
+              <tr>
+                <td>Dried thyme</td>
+                <td>1 teaspoon</td>
+              </tr>
+              <tr>
+                <td> Salt and peppe</td>
+                <td> to taste</td>
+              </tr>
+            </table>
+            <div class="ins">Instructions</div>
+            <div class="instructions">
+              <ol>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Preheat the oven to 350°F (175°C).</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>In a bowl, combine ground beef, breadcrumbs, milk, chopped onion,<br> minced garlic, ketchup, Worcestershire sauce, dried thyme, salt, and pepper..</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Mix until well combined and shape into a loaf.</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Place the meat loaf in a baking dish and bake for 1 hour or until the<br> internal temperature reaches 160°F (70°C).</label>
+                </li>
+                <li>
+                  <!-- <input type="checkbox" name="" id=""> -->
+                  <label>Let it rest for a few minutes before slicing. Serve with your favorite sides.</label>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="back"><a href="#recipes">Back to top</a></aBack></div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
 
 </body>
 </html>
